@@ -1,0 +1,23 @@
+appId: local.gitgrove.desktop
+productName: Gitgrove
+directories:
+  app: build/desktop
+  output: release
+files:
+  - main.cjs
+  - preload.cjs
+  - package.json
+  - "!**/node_modules{,/**/*}"
+afterPack: scripts/after-pack.cjs
+asar: true
+npmRebuild: false
+mac:
+  category: public.app-category.developer-tools
+  icon: build/icon.icns
+  identity: "-"
+  target:
+    - target: dir
+      arch: arm64
+    - target: zip
+      arch: arm64
+artifactName: "${productName}-${version}-mac-${arch}.${ext}"
