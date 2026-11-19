@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
+  experimental: { isrFlushToDisk: false },
   output: "standalone",
   poweredByHeader: false,
   devIndicators: false,
